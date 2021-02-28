@@ -6,7 +6,8 @@
   "extends": [
     "plugin:react/recommended",
     "airbnb",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -18,11 +19,20 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "import/extensions": "off",
     "react/jsx-filename-extension": [
       2,
       {
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["App"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
   }
 }
